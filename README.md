@@ -40,6 +40,8 @@ Ensure the following tools are configured on your local machine:
 For this guide, we'll use AWS EKS.
 
 ####   Deploy Using Terraform
+      
+      The Terrform script will create VPC with 4 subnet. 2 Subnet will be private
 
       Initialize and Apply Terraform Configuration
       cd terraform
