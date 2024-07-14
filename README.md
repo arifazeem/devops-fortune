@@ -69,6 +69,15 @@ aws eks --region your-region update-kubeconfig --name eks-cluster
       aws confgiure
       
    2)  **Dowload kubeconfig file of the cluster**
+       ```bash   
+      aws eks update-kubeconfig --region ap-south-1 --name private_eks_cluster
+  
+   4)  **update the aws-auth configmap to access the eks cluster from bastion vm**
+   5)  **sadasd**
+   6)  **asdasd**
+   7)  **asdasd** 
+
+   2)  **Dowload kubeconfig file of the cluster**
    
       ```bash   
       aws eks update-kubeconfig --region ap-south-1 --name private_eks_cluster
