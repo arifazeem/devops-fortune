@@ -45,7 +45,8 @@ For this guide, we'll use AWS EKS.
       cd terraform
       terraform init
       terraform apply
-      Configure kubectl
+
+![alt text](image.png)
 
 sh
 Copy code
