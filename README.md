@@ -137,12 +137,10 @@ aws eks --region your-region update-kubeconfig --name eks-cluster
 
    6)  **remove aws keys**
      
-      ```bash
        rm -rf .aws
 
    7)  **update the aws-auth configmap to access the eks cluster from bastion vm**
      
-      ```bash
        kubectl get cm aws-auth -n kube-system -o yaml > aws-auth.yaml
 
       
