@@ -27,7 +27,15 @@ Ensure the following tools are configured on your local machine:
 
    ```bash
    docker build -t devops-fortune .
-   Push Docker Image to ECR
+   we will push Push Docker Image to ECR once we create ECR repository via terraform script
+   
+3. **Push Docker Image to ECR**
+
+   ```bash
+   aws ecr get-login-password --region your-region | docker login --username AWS --password-stdin your-account-id.dkr.ecr.your-region.amazonaws.com
+   docker tag fortune-api:latest your-account-id.dkr.ecr.your-region.amazonaws.com/fortune-api:latest
+   docker push your-account-id.dkr.ecr.your-region.amazonaws.com/fortune-api:latest
+
 
 sh
 Copy code
