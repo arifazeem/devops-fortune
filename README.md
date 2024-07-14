@@ -111,6 +111,7 @@ aws eks --region your-region update-kubeconfig --name eks-cluster
       ```bash
        kubectl edit cm aws-auth -n kube-system
 **add the below data to aws-auth cm**
+
       ```bash
        data:
         mapRoles: |
