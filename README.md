@@ -1,7 +1,6 @@
 To accomplish the tasks outlined, we'll follow these steps:
 
 
-
 1.    Containerization:
 
       Containerize the application from the provided GitHub repository.
@@ -32,7 +31,7 @@ Let's break this down step-by-step:
 
 ### Steps
 
-1.    **Containerization:**
+1.    **Containerization the application:**
 
 
   a). **Clone the repository**:
@@ -42,7 +41,7 @@ Let's break this down step-by-step:
 
       
   b). **Build the docker image**:
-         ```sh
+  ```sh
          docker build -t devops-fortune .
  
 
