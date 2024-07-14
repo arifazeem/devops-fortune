@@ -60,6 +60,7 @@ aws eks --region your-region update-kubeconfig --name eks-cluster
 3. **Deploy the Application**
 
    1. **Configure Bation VM**
+      
 Confgiure AWS Credentials
       
       ```bash
