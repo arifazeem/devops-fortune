@@ -40,12 +40,12 @@ Ensure the following tools are configured on your local machine:
 For this guide, we'll use AWS EKS.
 
 ####   Deploy Using Terraform
-The Terrform script will create VPC with 4 subnets. 2 Subnets will be private be private and 2 subnets will be public.
+The Terrform script will create VPC with 4 subnets. 2 Subnets will be private and 2 subnets will be public.
 In Private subnet EKS cluster and worker node will be created. In public Subnet Bastion VM will be created though which
-we will be accessing EKS cluster
-      
+we will be accessing EKS cluster. Other resoucres that will be created with this terraform are bastion vm, natgateway, Internet gateway security group. Please follow the below digram for better understing
 
-      Initialize and Apply Terraform Configuration
+Initialize and Apply Terraform Configuration     
+      
       cd terraform
       terraform init
       terraform apply
