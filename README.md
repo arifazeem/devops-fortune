@@ -61,7 +61,8 @@ aws eks --region your-region update-kubeconfig --name eks-cluster
 
    1. **Configure Bation VM**
       Confgiure AWS Credentials
-
+      
+      ```bash
       aws confgiure
 
 Deploy Kubernetes Resources
