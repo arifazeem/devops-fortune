@@ -98,11 +98,13 @@ aws eks --region your-region update-kubeconfig --name eks-cluster
                     - system:masters
 
 
-       role_name: whcih has been attach to the Bation VM
+
+      role_name: whcih has been attach to the Bation VM
       username: IAM user to which you want to give access to eks cluster
 
 
     4)  **Dowload kubeconfig file of the cluster**
+
        ```bash
        aws eks update-kubeconfig --region ap-south-1 --name private_eks_cluster
   
