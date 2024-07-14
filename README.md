@@ -40,7 +40,7 @@ Let's break this down step-by-step:
          cd devops-fortune
 
 
-      **b). **Build the docker images**:**
+      b). **Build the docker images**:
          ```sh
          git clone https://github.com/arifazeem/devops-fortune.git
          cd devops-fortune
