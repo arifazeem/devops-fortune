@@ -40,7 +40,15 @@ Let's break this down step-by-step:
          cd devops-fortune
 
 
-2. **Deploy using Terraform:
+       b). **Build the docker images**:
+         ```sh
+         git clone https://github.com/arifazeem/devops-fortune.git
+         cd devops-fortune
+         
+      
+
+
+1. **Deploy using Terraform:
    ```sh
       cd terraform
       terraform init
@@ -48,13 +56,13 @@ Let's break this down step-by-step:
       Configure kubectl:
    
 
-3. **Build and push Docker image and push to ECR:
+2. **Build and push Docker image and push to ECR:
    ```sh
       aws ecr get-login-password --region your-region | docker login --username AWS --password-stdin your-account-id.dkr.ecr.your-region.amazonaws.com
       docker tag fortune-api:latest your-account-id.dkr.ecr.your-region.amazonaws.com/fortune-api:latest
       docker push your-account-id.dkr.ecr.your-region.`amazonaws.com/fortune-api:latest
 
-4. Login to bastion VM that got created using Terraform 
+3. Login to bastion VM that got created using Terraform 
    
 4.
 sh
