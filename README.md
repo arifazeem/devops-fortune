@@ -20,28 +20,19 @@ Copy code
    git clone https://github.com/wego/devops-fortune-api.git
    cd devops-fortune-api
 
-2.  **Build and push Docker image:
-
- ```sh
-   Copy code
-   docker build -t your-dockerhub-username/fortune-api .
-   docker push your-dockerhub-username/fortune-api
-   Or push to AWS ECR:
-
-3. 
-```sh
-      `Copy code
+2. **Build and push Docker image and push to ECR:
+   ```sh
       aws ecr get-login-password --region your-region | docker login --username AWS --password-stdin your-account-id.dkr.ecr.your-region.amazonaws.com
       docker tag fortune-api:latest your-account-id.dkr.ecr.your-region.amazonaws.com/fortune-api:latest
       docker push your-account-id.dkr.ecr.your-region.`amazonaws.com/fortune-api:latest
-Deploy using Terraform:
 
-sh
-Copy code
-terraform init
-terraform apply
-Configure kubectl:
+3. **Deploy using Terraform:
+   ```sh
+      terraform init
+      terraform apply
+      Configure kubectl:
 
+4.
 sh
 Copy code
 aws eks --region your-region update-kubeconfig --name eks-cluster
