@@ -32,15 +32,20 @@ Let's break this down step-by-step:
 
 ### Steps
 
-1.    Containerization:
+1.    **Containerization:**
 
-      a). **Clone the repository**:
+  a). **Clone the repository**:
          ```sh
          git clone https://github.com/arifazeem/devops-fortune.git
          cd devops-fortune
+      
+  b). **Build the docker image**:
+         ```sh
+         docker build -t devops-fortune .
+ 
 
          
-2     b). **Build the docker images**:
+      **Build the docker images**:
          ```sh
          git clone https://github.com/arifazeem/devops-fortune.git
          cd devops-fortune
