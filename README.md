@@ -35,7 +35,7 @@ Let's break this down step-by-step:
 1.    **Containerization:**
 
   a). **Clone the repository**:
-         ```sh
+         `bash
          git clone https://github.com/arifazeem/devops-fortune.git
          cd devops-fortune
       
