@@ -42,8 +42,7 @@ For this guide, we'll use AWS EKS.
 ####   Deploy Using Terraform
       Initialize and Apply Terraform Configuration
       
-      ```sh
-      Copy code
+      ```bash
       cd terraform
       terraform init
       terraform apply
