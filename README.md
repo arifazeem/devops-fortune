@@ -68,7 +68,13 @@ aws eks --region your-region update-kubeconfig --name eks-cluster
       ```bash
       aws confgiure
       
-   3)  **Dowload kubeconfig file of the cluster**
+   2)  **Dowload kubeconfig file of the cluster**
+   
+      ```bash   
+      aws eks update-kubeconfig --region ap-south-1 --name private_eks_cluster
+      
+
+  3)   **Dowload kubeconfig file of the cluster**
    
       ```bash   
       aws eks update-kubeconfig --region ap-south-1 --name private_eks_cluster
