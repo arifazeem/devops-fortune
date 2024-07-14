@@ -57,14 +57,14 @@ Copy code
 aws eks --region your-region update-kubeconfig --name eks-cluster
 
 
-
-      1
-
 3. **Deploy the Application**
 
    1. **Configure Bation VM**
+      Confgiure AWS Credentials
+
+      aws confgiure
+
 Deploy Kubernetes Resources
-sh
 
 kubectl apply -f k8s_deployment.yaml
 kubectl apply -f k8s_service.yaml
