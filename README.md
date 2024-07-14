@@ -58,9 +58,16 @@ aws eks --region your-region update-kubeconfig --name eks-cluster
 
 
 
+      1
+
+3. **Deploy the Application**
+
+   1. **Configure Bation VM**
+Deploy Kubernetes Resources
 sh
-Copy code
-aws ecr get-login-password --region your-region | docker login --username AWS --password-stdin your-account-id.dkr.ecr.your-region.amazonaws.com
-docker tag fortune-api:latest your-account-id.dkr.ecr.your-region.amazonaws.com/fortune-api:latest
-docker push your-account-id.dkr.ecr.your-region.amazonaws.com/fortune-api:latest
+
+kubectl apply -f k8s_deployment.yaml
+kubectl apply -f k8s_service.yaml
+Accessing the Application
+The application will be accessible via the Load Balancer URL created by the Kubernetes service.
 
