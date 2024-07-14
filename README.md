@@ -1,13 +1,30 @@
-Documentation and Granting Access
-Document your setup and deployment instructions in a README.md file within your repository:
+To accomplish the tasks outlined, we'll follow these steps:
+
+
+
+1.    Containerization:
+
+      Containerize the application from the provided GitHub repository.
+      Push the Docker image to Docker Hub or AWS ECR.
+      
+
+2.    Setup a Runtime:
+
+      Choose a stack (AWS ECS, AWS EKS, or Lambda) for running the application.
+      Manage the setup using Infrastructure as Code (IaC) tools like Terraform, CloudFormation, Pulumi, or Serverless framework.
+
+3.    Deploy the Application:
+
+      Deploy the application using the chosen stack.
+      Document the setup and deployment instructions.
+
+
+Let's break this down step-by-step:
 
 ![alt text](image.png)
 
-markdown
-Copy code
-## Fortune API Deployment
 
-### Prerequisites
+### Prerequisites that you have to configired on you local 
 - Docker
 - AWS CLI
 - Terraform
@@ -15,23 +32,30 @@ Copy code
 
 ### Steps
 
-1. **Clone the repository**:
-   ```sh
-   git clone https://github.com/wego/devops-fortune-api.git
-   cd devops-fortune-api
+1.    Containerization:
 
-2. **Build and push Docker image and push to ECR:
+      a). **Clone the repository**:
+         ```sh
+         git clone https://github.com/arifazeem/devops-fortune.git
+         cd devops-fortune
+
+
+2. **Deploy using Terraform:
+   ```sh
+      cd terraform
+      terraform init
+      terraform apply
+      Configure kubectl:
+   
+
+3. **Build and push Docker image and push to ECR:
    ```sh
       aws ecr get-login-password --region your-region | docker login --username AWS --password-stdin your-account-id.dkr.ecr.your-region.amazonaws.com
       docker tag fortune-api:latest your-account-id.dkr.ecr.your-region.amazonaws.com/fortune-api:latest
       docker push your-account-id.dkr.ecr.your-region.`amazonaws.com/fortune-api:latest
 
-3. **Deploy using Terraform:
-   ```sh
-      terraform init
-      terraform apply
-      Configure kubectl:
-
+4. Login to bastion VM that got created using Terraform 
+   
 4.
 sh
 Copy code
