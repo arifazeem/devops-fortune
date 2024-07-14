@@ -40,9 +40,8 @@ Ensure the following tools are configured on your local machine:
 For this guide, we'll use AWS EKS.
 
 ####   Deploy Using Terraform
+
       Initialize and Apply Terraform Configuration
-      
-      ```bash
       cd terraform
       terraform init
       terraform apply
