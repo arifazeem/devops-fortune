@@ -135,13 +135,17 @@ aws eks --region your-region update-kubeconfig --name eks-cluster
 
 
 
-   6)  **remove aws keys**
-     
+   6)  **remove aws keys and check eks cluster are able to access via role**
+       ```bash
        rm -rf .aws
+       aws sts get-caller-identity
 
-   7)  **update the aws-auth configmap to access the eks cluster from bastion vm**
-     
-       kubectl get cm aws-auth -n kube-system -o yaml > aws-auth.yaml
+   7)  **deploy the application**
+
+      ```bash
+      git clone https://github.com/arifazeem/devops-fortune.git
+      cd devops-fortune/devops-fortune-api
+      kubectl apply -f .
 
       
 
