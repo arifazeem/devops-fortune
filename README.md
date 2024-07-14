@@ -67,8 +67,7 @@ aws eks --region your-region update-kubeconfig --name eks-cluster
       ```bash
       https://us-east-1.console.aws.amazon.com/iamv2/home?region=ap-south-1#/users
       aws confgiure
-
-      b) Dowload kubeconfig file of the cluster
+####  b) Dowload kubeconfig file of the cluster
       ```bash
       aws eks update-kubeconfig --region ap-south-1 --name private_eks_cluster
       
