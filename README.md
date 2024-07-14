@@ -72,7 +72,7 @@ aws eks --region your-region update-kubeconfig --name eks-cluster
        ```bash
        aws eks update-kubeconfig --region ap-south-1 --name private_eks_cluster
 
-  3) **update the aws-auth configmap to access the eks cluster from bastion vmi**
+   3) **update the aws-auth configmap to access the eks cluster from bastion vm**
       
       ```bash
       kubectl edit cm aws-auth -n kube-system
@@ -102,11 +102,11 @@ aws eks --region your-region update-kubeconfig --name eks-cluster
       username: IAM user to which you want to give access to eks cluster
 
 
-   4)  **Dowload kubeconfig file of the cluster**
+    4)  **Dowload kubeconfig file of the cluster**
        ```bash
        aws eks update-kubeconfig --region ap-south-1 --name private_eks_cluster
   
-   5)  **update the aws-auth configmap to access the eks cluster from bastion vm**
+    5)  **update the aws-auth configmap to access the eks cluster from bastion vm**
      
       ```bash
        kubectl edit cm aws-auth -n kube-system
@@ -135,12 +135,12 @@ aws eks --region your-region update-kubeconfig --name eks-cluster
 
 
 
-   3)  **update the aws-auth configmap to access the eks cluster from bastion vm**
+   6)  **remove aws keys**
      
       ```bash
-       kubectl get cm aws-auth -n kube-system -o yaml > aws-auth.yaml
+       rm -rf .aws
 
-   3)  **update the aws-auth configmap to access the eks cluster from bastion vm**
+   7)  **update the aws-auth configmap to access the eks cluster from bastion vm**
      
       ```bash
        kubectl get cm aws-auth -n kube-system -o yaml > aws-auth.yaml
