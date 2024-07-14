@@ -1,0 +1,44 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: fotune-api
+  namespace: default
+spec:
+  replica: 1
+  selector:
+    matchLabels:
+      name: fotune-api
+  template:
+    metadata:
+      labels: 
+        name: fotune-api
+    spec:
+      container:
+      - image: 590183814659.dkr.ecr.ap-south-1.amazonaws.com/fotune-api:latest
+        name: fotune-api
+        imagePullPolicy: Always
+        resource:
+          request:
+            cpu: 250m
+            memory: 256mi
+          limit:
+            cpu: 500m
+            memory: 1Gi
+        command: ["uvicorn"]
+        arg: ["main:app", "--host", "0.0.0.0", "--port", "8080"]
+        livenessProbe:
+          httpGet:
+            path: /healthcheck
+            port: 8080
+            scheme: HTTP
+          initialDelaySeconds: 10
+          periodSeconds: 5
+        readinessProbe:
+          httpGet:
+            path: /healthcheck
+            port: 8080
+            scheme: HTTP 
+          initialDelaySeconds: 10
+          periodSeconds: 5
+        
+
