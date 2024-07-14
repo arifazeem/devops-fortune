@@ -108,41 +108,12 @@ aws eks --region your-region update-kubeconfig --name eks-cluster
        ```bash
        aws eks update-kubeconfig --region ap-south-1 --name private_eks_cluster
   
-    5)  **update the aws-auth configmap to access the eks cluster from bastion vm**
+    5)  **remove aws keys and check eks cluster are able to access via role**
      
       ```bash
-       kubectl edit cm aws-auth -n kube-system
-**add the below data to aws-auth cm**
-
-      ```bash
-       data:
-        mapRoles: |
-          - groups:
-            - system:bootstrappers
-            - system:nodes
-            rolearn: arn:aws:iam::590183814659:role/eks-node-role
-            username: system:node:{{EC2PrivateDNSName}}
-          - groups:
-            - system:masters
-            rolearn: arn:aws:iam::590183814659:role/<role_name>
-            username: <role_name>
-        mapUsers: |
-          - userarn: arn:aws:iam::590183814659:user/<username>
-            username: <username>
-            groups:
-              - system:masters
-
-      role_name: whcih has been attach to the Bation VM
-      username: IAM user to which you want to give access to eks cluster
-
-
-
-   6)  **remove aws keys and check eks cluster are able to access via role**
-       ```bash
        rm -rf .aws
        aws sts get-caller-identity
-
-   7)  **deploy the application**
+  6)  **deploy the application**
 
       ```bash
       git clone https://github.com/arifazeem/devops-fortune.git
