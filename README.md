@@ -18,6 +18,29 @@ To accomplish the tasks outlined, we'll follow these steps:
       Document the setup and deployment instructions.
 
 
+# Fortune API Deployment
+
+## Prerequisites
+
+Ensure the following tools are configured on your local machine:
+
+- Docker
+- AWS CLI
+- Terraform
+- kubectl
+
+## Steps
+
+### 1. Containerization
+
+#### Clone the Repository
+
+```bash
+git clone https://github.com/arifazeem/devops-fortune.git
+cd devops-fortune
+
+
+
 Let's break this down step-by-step:
 
 ![alt text](image.png)
