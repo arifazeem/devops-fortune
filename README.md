@@ -36,6 +36,24 @@ Ensure the following tools are configured on your local machine:
    docker tag fortune-api:latest your-account-id.dkr.ecr.your-region.amazonaws.com/fortune-api:latest
    docker push your-account-id.dkr.ecr.your-region.amazonaws.com/fortune-api:latest
 
+### 2. Setup a Runtime
+For this guide, we'll use AWS EKS.
+
+####   Deploy Using Terraform
+      Initialize and Apply Terraform Configuration
+      
+      ```sh
+      Copy code
+      cd terraform
+      terraform init
+      terraform apply
+      Configure kubectl
+
+sh
+Copy code
+aws eks --region your-region update-kubeconfig --name eks-cluster
+
+
 
 sh
 Copy code
