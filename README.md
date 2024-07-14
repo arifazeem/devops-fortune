@@ -75,21 +75,35 @@ aws eks --region your-region update-kubeconfig --name eks-cluster
    3)  **update the aws-auth configmap to access the eks cluster from bastion vm**
      
       ```bash
-       aws eks update-kubeconfig --region ap-south-1 --name private_eks_cluster
+       kubectl edit cm aws-auth -n kube-system
+
+       data:
+        mapRoles: |
+          - groups:
+            - system:bootstrappers
+            - system:nodes
+            rolearn: arn:aws:iam::590183814659:role/eks-node-role
+            username: system:node:{{EC2PrivateDNSName}}
+          - groups:
+            - system:masters
+            rolearn: arn:aws:iam::590183814659:role/bastion-role
+            username: bastion-role
+        mapUsers: |
+          - userarn: arn:aws:iam::590183814659:user/arifazim
+            username: arifazim
+            groups:
+              - system:masters
   
-   5)  **sadasd**
-   6)  **asdasd**
-   7)  **asdasd** 
+   3)  **update the aws-auth configmap to access the eks cluster from bastion vm**
+     
+      ```bash
+       kubectl get cm aws-auth -n kube-system -o yaml > aws-auth.yaml
 
-   2)  **Dowload kubeconfig file of the cluster**
-   
-      ```bash   
-      aws eks update-kubeconfig --region ap-south-1 --name private_eks_cluster
-      
+   3)  **update the aws-auth configmap to access the eks cluster from bastion vm**
+     
+      ```bash
+       kubectl get cm aws-auth -n kube-system -o yaml > aws-auth.yaml
 
-   3)   **update the aws-auth configmap to access the eks cluster from bastion vm**   
-      ```bash   
-       kubectl edit cm aws_auth -n kube-system
       
 
 Deploy Kubernetes Resources
