@@ -63,7 +63,7 @@ aws eks --region your-region update-kubeconfig --name eks-cluster
       
 1. #### Confgiure AWS Credentials on bastion vm
       
-   1) **Dowload Access Credentials [Click here to access the AWS IAM Console](https://us-east-1.console.aws.amazon.com/iamv2/home?region=ap-south-1#/users) and configure awscli**
+   1) **Dowload Access Credentials [Click here to access the AWS IAM Console](https://us-east-1.console.aws.amazon.com/iamv2/home?region=ap-south-1#/users) and configure awscli Credentials with below command**
       
       ```bash
       aws confgiure
@@ -121,11 +121,8 @@ aws eks --region your-region update-kubeconfig --name eks-cluster
       kubectl apply -f .
 
       
-
-Deploy Kubernetes Resources
-
-kubectl apply -f k8s_deployment.yaml
-kubectl apply -f k8s_service.yaml
 Accessing the Application
 The application will be accessible via the Load Balancer URL created by the Kubernetes service.
+```bash
+kubectl get svc
 
