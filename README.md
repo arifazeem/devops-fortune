@@ -63,12 +63,9 @@ aws eks --region your-region update-kubeconfig --name eks-cluster
       
 1. #### Confgiure AWS Credentials on bastion vm
       
-      1) **Dowload Access Credentials [Click here to access the AWS IAM Console](https://us-east-1.console.aws.amazon.com/iamv2/home?region=ap-south-1#/users) and configure awscli**
-      ```bash
-      https://us-east-1.console.aws.amazon.com/iamv2/home?region=ap-south-1#/users
+   1) **Dowload Access Credentials [Click here to access the AWS IAM Console](https://us-east-1.console.aws.amazon.com/iamv2/home?region=ap-south-1#/users) and configure awscli**
       aws confgiure
-       2)  **Dowload kubeconfig file of the cluster**
-      ```bash
+   2)  **Dowload kubeconfig file of the cluster**
       aws eks update-kubeconfig --region ap-south-1 --name private_eks_cluster
       
 
