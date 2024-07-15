@@ -21,11 +21,16 @@ Ensure the following tools are configured on your local machine:
 
    ```bash
    git clone https://github.com/arifazeem/devops-fortune.git
+   -------------------------------------------------------
+   verification: 
+
+   ls devops-fortune
    cd devops-fortune
 
 2. **Build the Docker Image**
-
+   
    ```bash
+   -------------------------------------------------------
    docker build -t devops-fortune .
    we will push Push Docker Image to ECR once we create ECR repository via terraform script
    
