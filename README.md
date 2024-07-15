@@ -73,10 +73,10 @@ Initialize and Apply Terraform Configuration
 
       ```bash
       Create IAM user
-      - Go to IAM Console and Create One user having access to the AWS Services
-      - Once done, please Create access key
+      - Go to IAM Console and Create One user with least privelidges having access to the AWS Services
+      - Once done, please Create access key by clicking access key button.
       - login to Bastion vm and type the command `AWS Configure`
-
+         ssh <bastion-vm>
          ubuntu@ip-10-0-4-171:~$ aws configure
          AWS Access Key ID [****************JTX2]:
          AWS Secret Access Key [****************XCUj]:
