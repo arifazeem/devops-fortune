@@ -133,15 +133,22 @@ aws eks --region your-region update-kubeconfig --name eks-cluster
          {
           "UserId": "AIDAYS2NSKYB6RMMPUJDP",
           "Account": "590183814659",
-          "Arn": "arn:aws:iam::590183814659:user/arifazim"
-       }
+          "Arn": "arn:aws:iam::590183814659:user/arifazim"}
 
   
     5)  **remove aws keys and check eks cluster are able to access via role**
      
       ```bash
-       rm -rf .aws
+       rm -rf ~/.aws
        aws sts get-caller-identity
+         Output should be as below:
+         
+         {
+          "UserId": "AIDAYS2NSKYB6RMMPUJDP",
+          "Account": "590183814659",
+          "Arn": "arn:aws:iam::590183814659:user/arifazim"}
+
+
   6)  **deploy the application**
 
       ```bash
