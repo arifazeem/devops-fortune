@@ -32,6 +32,7 @@ Ensure the following tools are configured on your local machine:
    ```bash
    -------------------------------------------------------
    docker build -t devops-fortune .
+   -------------------------------------------------------
    we will push Push Docker Image to ECR once we create ECR repository via terraform script
    
 3. **Push Docker Image to ECR**
@@ -39,9 +40,11 @@ Ensure the following tools are configured on your local machine:
    #### Note: run this steps once ECR got Created after running the terraform script.
 
    ```bash
+   -------------------------------------------------------
    aws ecr get-login-password --region your-region | docker login --username AWS --password-stdin your-account-id.dkr.ecr.your-region.amazonaws.com
    docker tag fortune-api:latest your-account-id.dkr.ecr.your-region.amazonaws.com/fortune-api:latest
    docker push your-account-id.dkr.ecr.your-region.amazonaws.com/fortune-api:latest
+   -------------------------------------------------------
 
 ### 2. Setup a Runtime
 For this guide, we'll use AWS EKS.
@@ -55,7 +58,7 @@ we will be accessing EKS cluster. Other resoucres that will be created with this
 Please follow the below digram for better understing
 
 Initialize and Apply Terraform Configuration     
-      
+-------------------------------------------------------
      1. cd terraform
      2. terraform init
      3. terraform apply
