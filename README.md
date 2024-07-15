@@ -44,7 +44,7 @@ For this guide, we'll use AWS EKS.
 ####   Deploy Using Terraform
 The Terrform script will create VPC with 4 subnets. 2 Subnets will be private and 2 subnets will be public.
 In Private subnet EKS cluster and worker node will be created. In public Subnet Bastion VM will be created though which
-we will be accessing EKS cluster. Other resoucres that will be created with this terraform are bastion vm, natgateway, Internet gateway security group. Please follow the below digram for better understing
+we will be accessing EKS cluster. Other resoucres that will be created with this terraform are bastion vm, natgateway, Internet gateway security group,Iam Policy and roles. Please follow the below digram for better understing
 
 Initialize and Apply Terraform Configuration     
       
@@ -67,8 +67,12 @@ aws eks --region your-region update-kubeconfig --name eks-cluster
       
    1) **Dowload Access Credentials [Click here to access the AWS IAM Console](https://us-east-1.console.aws.amazon.com/iamv2/home?region=ap-south-1#/users) and configure awscli Credentials with below command**
       
-      ```bash
-      aws confgiure
+      Create IAM user
+      - Go to IAM Console and Create One user having access to the AWS Services
+      - Once done, please open Bastion and move to settings
+      - Click on AWS Settings option and disable AWS managed credential option
+      - Jump to Bastion CLI and type the command AWS Configure
+      - Once you setup the credential, you are ready to create the EKS cluster
       
    2)  **Add K8s cluster context in ~/.kube/config file to access eks cluster from bation vm**
      
