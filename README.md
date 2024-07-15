@@ -177,6 +177,11 @@ Initialize and Apply Terraform Configuration
       ```bash
       kubectl get svc
 
+      below are the output
+
+      NAME                 TYPE           CLUSTER-IP      EXTERNAL-IP                                                                PORT(S)          AGE
+      fotune-api-service   LoadBalancer   172.20.254.44   a4489e945842f44369cca5c0c842db21-1620078989.ap-south-1.elb.amazonaws.com   8080:30914/TCP   24s
+
 
 # **Non-Functional Requirements** 
 Scalability
