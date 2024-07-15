@@ -228,6 +228,14 @@ Rollout of modules will be done based on their criticality and dependency
 
 ▬▬▬▬▬▬ Important links❗️ ▬▬▬▬▬▬
 
+AWS EKS Official Documentation
+
+[AWS EKS Official Documentation](https://docs.aws.amazon.com/eks/latest/userguide/getting-started-console.html)
+
+Kubectl installation Guide
+
+
+
 ► Install kubectl - https://docs.aws.amazon.com/eks/latest/userguide/install-kubectl.html
 
 ► Update kubeconfig - [https://docs.aws.amazon.com/cli/lates...](https://docs.aws.amazon.com/cli/latest/reference/eks/update-kubeconfig.html)
