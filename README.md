@@ -222,11 +222,6 @@ Rollout of modules will be done based on their criticality and dependency
 | 3   | Support incidents                     | A reduction in support incidents month over month post-migration is a metric to measure the support costs.                                                          |
 | 4   | Time to enhance a feature or add a feature | Adaptability and extensibility of this stream-based platform will reduce the time to develop/enhance feature requests.                                             |
 | 5   | Support cost on onboarding            | The interface should be a self-service UI to onboard partners / merchants, and the number of onboarding support issues should be minimal.                            |
-| 6   | Transaction Success Rate              | User interface to see the success rate and failure reasons for the transactions and use this as feedback loop to improve the accuracy of the system over time.       |
 
 
-![image](https://github.com/user-attachments/assets/f90580ca-0fe5-4926-bd72-4b178d160bc0)
-
-
-incident managemnet(SLA, SLO's),
 
