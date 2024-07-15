@@ -106,9 +106,10 @@ Initialize and Apply Terraform Configuration
    4) **update the aws-auth configmap to access the eks cluster by using instance profile**
       
       ```bash
+      -------------------------------------------------------
       kubectl edit cm aws-auth -n kube-system
-
-      
+      -------------------------------------------------------
+    
          **add the below data to aws-auth cm**
             ```bash
              data:
@@ -142,7 +143,10 @@ Initialize and Apply Terraform Configuration
          Test your configuration
         
          ```bash
+         -------------------------------------------------------
          aws sts get-caller-identity
+         -------------------------------------------------------
+
          Output should be as below:
          
          {
@@ -154,8 +158,11 @@ Initialize and Apply Terraform Configuration
     5)  **remove aws keys and check eks cluster are able to access via role**
      
       ```bash
+      -------------------------------------------------------
        rm -rf ~/.aws/credentials
        aws sts get-caller-identity
+      -------------------------------------------------------
+
          Output should be as below:
          
          {
