@@ -40,13 +40,13 @@ spec:
             scheme: HTTP
           initialDelaySeconds: 10
           periodSeconds: 5
-        affinity:
-        podAntiAffinity:
-          requiredDuringSchedulingIgnoredDuringExecution:
-            - labelSelector:
-                matchExpressions:
-                  - key: name
-                    operator: In
-                    values:
-                      - fortune-api
-              topologyKey: "kubernetes.io/hostname"
+      affinity:
+      podAntiAffinity:
+        requiredDuringSchedulingIgnoredDuringExecution:
+          - labelSelector:
+              matchExpressions:
+                - key: name
+                  operator: In
+                  values:
+                    - fortune-api
+            topologyKey: "kubernetes.io/hostname"
