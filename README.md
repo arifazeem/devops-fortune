@@ -54,10 +54,6 @@ Initialize and Apply Terraform Configuration
 
 ![alt text](image.png)
 
-sh
-Copy code
-aws eks --region your-region update-kubeconfig --name eks-cluster
-
 
 ### 3. **Deploy the Application**
 
