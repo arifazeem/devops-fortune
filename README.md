@@ -131,9 +131,9 @@ aws eks --region your-region update-kubeconfig --name eks-cluster
          Output should be as below:
          
          {
-          "UserId": "AIDAYS2NSKYB6RMMPUJDP",
-          "Account": "590183814659",
-          "Arn": "arn:aws:iam::590183814659:user/arifazim"}
+          "UserId": "***********MPUJDP",
+          "Account": "**********",
+          "Arn": "arn:aws:iam::**********:user/arifazim"}
 
   
     5)  **remove aws keys and check eks cluster are able to access via role**
