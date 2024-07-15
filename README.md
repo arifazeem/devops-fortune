@@ -169,8 +169,19 @@ Initialize and Apply Terraform Configuration
       kubectl apply -f .
 
       
-Accessing the Application
-The application will be accessible via the Load Balancer URL created by the Kubernetes service.
-```bash
-kubectl get svc
+      Accessing the Application
+      The application will be accessible via the Load Balancer URL created by the Kubernetes service.
+      ```bash
+      kubectl get svc
+
+
+# **Non-Functional Requirements** 
+Scalability
+Ensure the API can handle a large number of requests by configuring Horizontal Pod Autoscaler (HPA) and deploying it across multiple nodes.
+
+High Availability
+Deploy the application across multiple Availability Zones to ensure high availability and fault tolerance.
+
+Security
+Use private subnets for deploying the EKS cluster and ensure that the API endpoints are secured using appropriate IAM roles and policies.
 
