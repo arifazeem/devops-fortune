@@ -107,8 +107,6 @@ aws eks --region your-region update-kubeconfig --name eks-cluster
        
         Run the below command into your terminal to Configure your Bastion to establlish communication with K8s Cluster
 
-
-       ```bash
        aws eks update-kubeconfig --region ap-south-1 --name private_eks_cluster
   
     5)  **remove aws keys and check eks cluster are able to access via role**
