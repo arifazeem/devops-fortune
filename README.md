@@ -195,11 +195,9 @@ Initialize and Apply Terraform Configuration
 
 # **Non-Functional Requirements** 
 ### **Deployment**
-   Out of Blue-Green, Canary Release, we would go for Canary release as the partners would be migrated in phases and the % of infra allocated depends on the % of partners migrated to the new Stream based system
+   We have to choose a deploymetn method it can be Blue-Green, Canary Release, progressive deployment. 
  
 
-The build files will have the config files and runtime args to deploy in any region with a single click.
-Rollout of modules will be done based on their criticality and dependency
 ![image](https://github.com/user-attachments/assets/75c0e3a9-bce3-4316-a197-e1ed7da463a0)
 
 ### **Scalability**
@@ -214,7 +212,7 @@ Rollout of modules will be done based on their criticality and dependency
    Use private subnets for deploying the EKS cluster and ensure that the API endpoints are secured using appropriate IAM roles and policies.
 
 ### **Observability:**
-      Apllication:
+      Application:
 
       Infra:
 
@@ -231,7 +229,7 @@ Rollout of modules will be done based on their criticality and dependency
 | 5   | Support cost on onboarding            | The interface should be a self-service UI to onboard partners / merchants, and the number of onboarding support issues should be minimal.                            |
 
 
-# Dockuments Link
+# Documents Link
 
 ▬▬▬▬▬▬ Important links❗️ ▬▬▬▬▬▬
 
