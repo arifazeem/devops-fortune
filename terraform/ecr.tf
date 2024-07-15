@@ -1,5 +1,5 @@
 resource "aws_ecr_repository" "foo" {
-  name                 = "fotune-api"
+  name                 = "fortune-api"
   image_tag_mutability = "MUTABLE"
 
   image_scanning_configuration {

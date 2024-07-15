@@ -1,31 +1,31 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: fotune-api
+  name: fortune-api
   namespace: default
 spec:
-  replica: 1
+  replicas: 1
   selector:
     matchLabels:
-      name: fotune-api
+      name: fortune-api
   template:
     metadata:
-      labels: 
-        name: fotune-api
+      labels:
+        name: fortune-api
     spec:
-      container:
-      - image: 590183814659.dkr.ecr.ap-south-1.amazonaws.com/fotune-api:latest
-        name: fotune-api
+      containers:
+      - image: 590183814659.dkr.ecr.ap-south-1.amazonaws.com/fortune-api:latest
+        name: fortune-api
         imagePullPolicy: Always
-        resource:
-          request:
+        resources:
+          requests:
             cpu: 250m
-            memory: 256mi
-          limit:
+            memory: 256Mi
+          limits:
             cpu: 500m
             memory: 1Gi
         command: ["uvicorn"]
-        arg: ["main:app", "--host", "0.0.0.0", "--port", "8080"]
+        args: ["main:app", "--host", "0.0.0.0", "--port", "8080"]
         livenessProbe:
           httpGet:
             path: /healthcheck
@@ -37,8 +37,16 @@ spec:
           httpGet:
             path: /healthcheck
             port: 8080
-            scheme: HTTP 
+            scheme: HTTP
           initialDelaySeconds: 10
           periodSeconds: 5
-        
-
+        affinity:
+        podAntiAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+            - labelSelector:
+                matchExpressions:
+                  - key: name
+                    operator: In
+                    values:
+                      - fortune-api
+              topologyKey: "kubernetes.io/hostname"

@@ -9,5 +9,4 @@ spec:
     targetPort: 8080
   selector:
     name: fotune-api
-  type: LoadBalancer
- 
+  type: ClusterIP
