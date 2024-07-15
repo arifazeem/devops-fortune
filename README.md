@@ -209,6 +209,9 @@ Initialize and Apply Terraform Configuration
 ### **Fault Tolerance**
    Being a distributed system, the system is designed such that unhealthy pods can go down, can be removed from traffic by the Gateway, the zone or region can go unavailable for some time.
 ### **Security**
+   Proper firewall rule must be setup. 
+   Segrigation of networks
+   OS patch, Docker image pachtes need to adhare.
    Use private subnets for deploying the EKS cluster and ensure that the API endpoints are secured using appropriate IAM roles and policies.
 
 ### **Observability:**
