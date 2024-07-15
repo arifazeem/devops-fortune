@@ -31,6 +31,8 @@ Ensure the following tools are configured on your local machine:
    
 3. **Push Docker Image to ECR**
 
+   #### Note: run this steps once ECR got Created after running the terraform script.
+
    ```bash
    aws ecr get-login-password --region your-region | docker login --username AWS --password-stdin your-account-id.dkr.ecr.your-region.amazonaws.com
    docker tag fortune-api:latest your-account-id.dkr.ecr.your-region.amazonaws.com/fortune-api:latest
@@ -74,7 +76,7 @@ aws eks --region your-region update-kubeconfig --name eks-cluster
        ```bash
        aws eks update-kubeconfig --region ap-south-1 --name private_eks_cluster
 
-   4) **update the aws-auth configmap to access the eks cluster from bastion vm**
+   4) **update the aws-auth configmap to access the eks cluster from bastion vm using instance profile**
       
       ```bash
       kubectl edit cm aws-auth -n kube-system
