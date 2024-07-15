@@ -174,14 +174,17 @@ Initialize and Apply Terraform Configuration
       
       Accessing the Application
       The application will be accessible via the Load Balancer URL created by the Kubernetes service.
-      ```bash
+
       kubectl get svc
 
       below are the output
-
+      ---------------------------------------------------------------------------------------------------------------------------------------------------
       NAME                 TYPE           CLUSTER-IP      EXTERNAL-IP                                                                PORT(S)          AGE
       fotune-api-service   LoadBalancer   172.20.254.44   a4489e945842f44369cca5c0c842db21-1620078989.ap-south-1.elb.amazonaws.com   8080:30914/TCP   24s
+      ----------------------------------------------------------------------------------------------------------------------------------------------------
 
+      use a4489e945842f44369cca5c0c842db21-1620078989.ap-south-1.elb.amazonaws.com:8080/healthcheck
+      ----------------------------------------------------------------------------------------------------------------------------------------------------
 
 # **Non-Functional Requirements** 
 Scalability
