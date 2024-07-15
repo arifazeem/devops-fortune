@@ -159,7 +159,7 @@ aws eks --region your-region update-kubeconfig --name eks-cluster
 
       ```bash
       git clone https://github.com/arifazeem/devops-fortune.git
-      cd devops-fortune/devops-fortune-api
+      cd devops-fortune/kubernetes-menifest
       kubectl apply -f .
 
       
