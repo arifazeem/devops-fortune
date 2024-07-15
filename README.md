@@ -116,9 +116,10 @@ aws eks --region your-region update-kubeconfig --name eks-cluster
        
         
          Once done, you run the below commands to test if your cluster is successfully running
-         
+   
          Test your configuration
-         
+        
+         ```bash
          kubectl get svc
          Output should be as below:
          
