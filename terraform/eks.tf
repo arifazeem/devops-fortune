@@ -3,6 +3,9 @@ resource "aws_eks_cluster" "eks_cluster" {
   role_arn = aws_iam_role.eks_cluster_role.arn
   vpc_config {
     subnet_ids = [ aws_subnet.private[0].id,aws_subnet.private[1].id ]
+    endpoint_private_access = true
+    endpoint_public_access  = false
+    security_group_ids = [ aws_security_group.eks_cluster_sg.id ]
   }
    depends_on = [
     aws_iam_role_policy_attachment.eks_cluster_policy
@@ -15,7 +18,7 @@ resource "aws_eks_node_group" "eks_node_group" {
   subnet_ids = [ aws_subnet.private[0].id,aws_subnet.private[1].id ]
   instance_types = [ var.eks_instance_type ]
   scaling_config {
-    desired_size = 2
+    desired_size = 3
     max_size     = 3    
     min_size     = 1
   }
