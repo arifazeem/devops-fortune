@@ -188,7 +188,7 @@ Initialize and Apply Terraform Configuration
 
 # **Non-Functional Requirements** 
 ### **Deployment**
-   Out of Blue-Green, Multi-service, Canary Release, we would go for Canary release as the partners would be migrated in phases and the % of infra allocated depends on the % of partners migrated to the new Stream based system
+   Out of Blue-Green, Canary Release, we would go for Canary release as the partners would be migrated in phases and the % of infra allocated depends on the % of partners migrated to the new Stream based system
  
 
 The build files will have the config files and runtime args to deploy in any region with a single click.
