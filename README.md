@@ -224,4 +224,11 @@ Rollout of modules will be done based on their criticality and dependency
 | 5   | Support cost on onboarding            | The interface should be a self-service UI to onboard partners / merchants, and the number of onboarding support issues should be minimal.                            |
 
 
+# Dockuments Link
+
+▬▬▬▬▬▬ Important links❗️ ▬▬▬▬▬▬
+► Install kubectl - https://docs.aws.amazon.com/eks/latest/userguide/install-kubectl.html
+► Update kubeconfig - [https://docs.aws.amazon.com/cli/lates...](https://docs.aws.amazon.com/cli/latest/reference/eks/update-kubeconfig.html)
+► Enabling IAM principal access to your cluster -
+[https://docs.aws.amazon.com/eks/lates...](https://docs.aws.amazon.com/eks/latest/userguide/access-entries.html#creating-access-entries)
 
