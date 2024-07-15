@@ -185,3 +185,12 @@ Deploy the application across multiple Availability Zones to ensure high availab
 Security
 Use private subnets for deploying the EKS cluster and ensure that the API endpoints are secured using appropriate IAM roles and policies.
 
+Observabilty:
+   Apllication:
+
+   Infra:
+
+Success Metrics
+
+incident managemnet(SLA, SLO's),
+
