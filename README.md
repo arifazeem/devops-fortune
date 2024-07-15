@@ -89,8 +89,9 @@ aws eks --region your-region update-kubeconfig --name eks-cluster
        aws eks update-kubeconfig --region ap-south-1 --name private_eks_cluster
 
        Test your configuration
+       
        kubectl cluster-info
-Kubernetes control plane is running at https://A1D0AF20163C6ADE0F90B7C236FA855E.gr7.ap-south-1.eks.amazonaws.com
+       Kubernetes control plane is running at https://A1D0AF20163C6ADE0F90B7C236FA855E.gr7.ap-south-1.eks.amazonaws.com
 CoreDNS is running at https://A1D0AF20163C6ADE0F90B7C236FA855E.gr7.ap-south-1.eks.amazonaws.com/api/v1/namespaces/kube-system/services/kube-dns:dns/proxy
 
    4) **update the aws-auth configmap to access the eks cluster by using instance profile**
