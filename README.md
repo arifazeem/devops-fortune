@@ -70,15 +70,14 @@ aws eks --region your-region update-kubeconfig --name eks-cluster
       ```bash
       Create IAM user
       - Go to IAM Console and Create One user having access to the AWS Services
-      - Once done, please open Bastion and move to settings
-      - Click on AWS Settings option and disable AWS managed credential option
-      - Jump to Bastion CLI and type the command AWS Configure
-      - Once you setup the credential, you are ready to create the EKS cluster
+      - Once done, please Create access key
+      - login to Bastion vm and type the command `AWS Configure`
+      - Once you setup the credential, you are ready to access the EKS cluster
         
       
    3)  **Add K8s cluster context in ~/.kube/config file to access eks cluster from bation vm**
      
-       Run the below command into your terminal to Configure your Bastion to establlish communication with K8s Cluster
+       Run the below command into your terminal to Configure your Bastion vm to establlish communication with K8s Cluster
        ```bash
        aws eks update-kubeconfig --region ap-south-1 --name private_eks_cluster
 
@@ -115,9 +114,17 @@ aws eks --region your-region update-kubeconfig --name eks-cluster
 
     5)  **Dowload kubeconfig file of the cluster  Add the K8s cluster context in ~/.kube/config file**
        
-        Run the below command into your terminal to Configure your Bastion to establlish communication with K8s Cluster
+        
+         Once done, you run the below commands to test if your cluster is successfully running
+         
+         Test your configuration
+         
+         kubectl get svc
+         Output should be as below:
+         
+         NAME             TYPE        CLUSTER-IP   EXTERNAL-IP   PORT(S)   AGE
+         svc/kubernetes   ClusterIP   10.100.0.1   <none>        443/TCP   1m
 
-       aws eks update-kubeconfig --region ap-south-1 --name private_eks_cluster
   
     5)  **remove aws keys and check eks cluster are able to access via role**
      
