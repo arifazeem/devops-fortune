@@ -92,9 +92,11 @@ Initialize and Apply Terraform Configuration
        ```bash
        aws eks update-kubeconfig --region ap-south-1 --name private_eks_cluster
 
-       Test your configuration. Output should be as below:
+       Test your configuration.
        
        kubectl cluster-info
+
+       Output should be as below:
        Kubernetes control plane is running at https://://***************************..gr7.ap-south-1.eks.amazonaws.com
        CoreDNS is running at https://***************************.gr7.ap-south-1.eks.amazonaws.com/api/v1/namespaces/kube-system/services/kube-dns:dns/proxy
 
