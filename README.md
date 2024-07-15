@@ -213,7 +213,7 @@ Rollout of modules will be done based on their criticality and dependency
 ### **Security**
    Use private subnets for deploying the EKS cluster and ensure that the API endpoints are secured using appropriate IAM roles and policies.
 
-### **Observabilty:**
+### **Observability:**
       Apllication:
 
       Infra:
