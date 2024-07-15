@@ -187,21 +187,31 @@ Initialize and Apply Terraform Configuration
       ----------------------------------------------------------------------------------------------------------------------------------------------------
 
 # **Non-Functional Requirements** 
-Scalability
-Ensure the API can handle a large number of requests by configuring Horizontal Pod Autoscaler (HPA) and deploying it across multiple nodes.
+### **Deployment**
+   Out of Blue-Green, Multi-service, Canary Release, we would go for Canary release as the partners would be migrated in phases and the % of infra allocated depends on the % of partners migrated to the new Stream based system
+ 
 
-High Availability
-Deploy the application across multiple Availability Zones to ensure high availability and fault tolerance.
+The build files will have the config files and runtime args to deploy in any region with a single click.
+Rollout of modules will be done based on their criticality and dependency
+![image](https://github.com/user-attachments/assets/75c0e3a9-bce3-4316-a197-e1ed7da463a0)
 
-Security
-Use private subnets for deploying the EKS cluster and ensure that the API endpoints are secured using appropriate IAM roles and policies.
+### **Scalability**
+   Ensure the API can handle a large number of requests by configuring Horizontal Pod Autoscaler (HPA) and deploying it across multiple nodes.
 
-Observabilty:
-   Apllication:
+### **High Availability**
+   Deploy the application across multiple Availability Zones to ensure high availability and fault tolerance.
 
-   Infra:
+### **Fault Tolerance**
+   Being a distributed system, the system is designed such that unhealthy pods can go down, can be removed from traffic by the Gateway, the zone or region can go unavailable for some time.
+### **Security**
+   Use private subnets for deploying the EKS cluster and ensure that the API endpoints are secured using appropriate IAM roles and policies.
 
-Success Metrics
+### **Observabilty:**
+      Apllication:
+
+      Infra:
+
+### **Success Metrics**
 
 ![image](https://github.com/user-attachments/assets/f90580ca-0fe5-4926-bd72-4b178d160bc0)
 
