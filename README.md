@@ -41,7 +41,7 @@ Ensure the following tools are configured on your local machine:
 ### 2. Setup a Runtime
 For this guide, we'll use AWS EKS.
 
-####   Deploy Using Terraform
+####   Deploy AWS EKS Using Terraform
 The Terrform script will create VPC with 4 subnets. 2 Subnets will be private and 2 subnets will be public.
 In Private subnet EKS cluster and worker node will be created. In public Subnet Bastion VM will be created though which
 we will be accessing EKS cluster. Other resoucres that will be created with this terraform are bastion vm, natgateway, Internet gateway security group,Iam Policy and roles. Please follow the below digram for better understing
@@ -61,7 +61,7 @@ aws eks --region your-region update-kubeconfig --name eks-cluster
 
 ### 3. **Deploy the Application**
 
-   #### **Configure Bation VM**
+   #### **Configure Bation VM from where we deploy the kubernetes deployment manifest file**
       
 1. #### Confgiure AWS Credentials on bastion vm
       
@@ -72,6 +72,13 @@ aws eks --region your-region update-kubeconfig --name eks-cluster
       - Go to IAM Console and Create One user having access to the AWS Services
       - Once done, please Create access key
       - login to Bastion vm and type the command `AWS Configure`
+
+         ubuntu@ip-10-0-4-171:~$ aws configure
+         AWS Access Key ID [****************JTX2]:
+         AWS Secret Access Key [****************XCUj]:
+         Default region name [ap-south-]: ap-south-1
+         Default output format [json]:      
+
       - Once you setup the credential, you are ready to access the EKS cluster
         
       
@@ -81,7 +88,7 @@ aws eks --region your-region update-kubeconfig --name eks-cluster
        ```bash
        aws eks update-kubeconfig --region ap-south-1 --name private_eks_cluster
 
-   4) **update the aws-auth configmap to access the eks cluster from bastion vm using instance profile**
+   4) **update the aws-auth configmap to access the eks cluster by using instance profile**
       
       ```bash
       kubectl edit cm aws-auth -n kube-system
@@ -112,7 +119,7 @@ aws eks --region your-region update-kubeconfig --name eks-cluster
       username: IAM user to which you want to give access to eks cluster
 
 
-    5)  **Dowload kubeconfig file of the cluster  Add the K8s cluster context in ~/.kube/config file**
+    5)  **Test your configuration**
        
         
          Once done, you run the below commands to test if your cluster is successfully running
@@ -120,11 +127,14 @@ aws eks --region your-region update-kubeconfig --name eks-cluster
          Test your configuration
         
          ```bash
-         kubectl get svc
+         aws sts get-caller-identity
          Output should be as below:
          
-         NAME             TYPE        CLUSTER-IP   EXTERNAL-IP   PORT(S)   AGE
-         svc/kubernetes   ClusterIP   10.100.0.1   <none>        443/TCP   1m
+         {
+          "UserId": "AIDAYS2NSKYB6RMMPUJDP",
+          "Account": "590183814659",
+          "Arn": "arn:aws:iam::590183814659:user/arifazim"
+       }
 
   
     5)  **remove aws keys and check eks cluster are able to access via role**
