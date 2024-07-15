@@ -68,7 +68,8 @@ aws eks --region your-region update-kubeconfig --name eks-cluster
       ```bash
       aws confgiure
       
-   2)  **Dowload kubeconfig file of the cluster**
+   2)  **Add K8s cluster context in ~/.kube/config file to access eks cluster from bation vm**
+       Run the below command into your terminal to Configure your Bastion to establlish communication with K8s Cluster
        ```bash
        aws eks update-kubeconfig --region ap-south-1 --name private_eks_cluster
 
