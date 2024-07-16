@@ -207,7 +207,7 @@ Initialize and Apply Terraform Configuration
    Deploy the application across multiple Availability Zones to ensure high availability and fault tolerance.
 
 ### **Fault Tolerance**
-   Being a distributed system, the system is designed such that unhealthy pods can go down, can be removed from traffic by the Gateway, the zone or region can go unavailable for some time.
+   As a distributed system, it is designed to handle unhealthy pods going down and being removed from traffic by the Gateway. Additionally, entire zones or regions can be temporarily unavailable without affecting the overall system.
 ### **Security**
    Proper firewall rules must be set up, including network segregation. OS and Docker image patches must be adhered to. Deploy the EKS cluster in private subnets and secure the API endpoints with appropriate IAM roles and policies.
 
