@@ -195,8 +195,7 @@ Initialize and Apply Terraform Configuration
 
 # **Non-Functional Requirements** 
 ### **Deployment**
-   We have to choose a deploymetn method. it can be Blue-Green, Canary Release or progressive deployment. 
- 
+   We need to choose a deployment method, such as Blue-Green, Canary Release, or progressive deployment.
 
 ![image](https://github.com/user-attachments/assets/75c0e3a9-bce3-4316-a197-e1ed7da463a0)
 
