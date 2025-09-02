@@ -2,10 +2,6 @@ name: Infracost PR Comment
 
 on:
   pull_request:
-    paths:
-      - "**/*.tf"
-      - "**/*.tfvars"
-
 jobs:
   infracost:
     runs-on: ubuntu-latest
