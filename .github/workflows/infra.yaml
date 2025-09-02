@@ -35,3 +35,12 @@ jobs:
       - name: Run Infracost
         run: |
           infracost breakdown --path plan.json --format json --out-file infracost.json
+      - name: Summarize with LLM
+        run: |
+          pip install openai
+          python scripts/rag_summary.py infracost.json > comment.md
+
+      - name: Post PR Comment
+        uses: marocchino/sticky-pull-request-comment@v2
+        with:
+          path: comment.md
