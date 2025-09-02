@@ -1,24 +1,53 @@
-import json, sys, openai
+import sys
+import json
+import os
+import google.generativeai as genai
 
-with open(sys.argv[1]) as f:
-    data = json.load(f)
+def main():
+    # Check input args
+    if len(sys.argv) < 2:
+        print("Usage: python rag_summary.py <infracost.json>")
+        sys.exit(1)
 
-total_cost = data["totalMonthlyCost"]
+    input_file = sys.argv[1]
 
-# Build prompt for RAG
-prompt = f"""
-You are a FinOps assistant. Here is the Terraform plan cost impact:
-{json.dumps(data, indent=2)}
+    # Load Infracost JSON
+    try:
+        with open(input_file, "r") as f:
+            infracost_data = json.load(f)
+    except Exception as e:
+        print(f"❌ Error reading {input_file}: {e}")
+        sys.exit(1)
 
-Summarize in simple words:
-- What resources were added/changed
-- Cost increase/decrease
-- Business impact in plain English
-"""
+    # Configure Gemini
+    api_key = os.getenv("GEMINI_API_KEY")
+    if not api_key:
+        print("❌ GEMINI_API_KEY environment variable is not set.")
+        sys.exit(1)
 
-resp = openai.ChatCompletion.create(
-    model="gpt-4o-mini",
-    messages=[{"role": "user", "content": prompt}]
-)
+    genai.configure(api_key=api_key)
 
-print(resp["choices"][0]["message"]["content"])
+    # Prepare prompt
+    prompt = f"""
+    You are a DevOps assistant reviewing Terraform cost estimates.
+    Based on the Infracost report below, summarize:
+
+    - Total monthly cost estimate
+    - Resources with the highest costs
+    - Significant cost changes (if available)
+    - Any recommendations to optimize costs
+
+    Infracost JSON report:
+    {json.dumps(infracost_data, indent=2)}
+    """
+
+    # Generate summary using Gemini
+    model = genai.GenerativeModel("gemini-2.0-flash")
+    response = model.generate_content(prompt)
+
+    # Print result to stdout (so GitHub Actions can redirect to comment.md)
+    print(response.text)
+
+
+if __name__ == "__main__":
+    main()

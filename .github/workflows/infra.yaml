@@ -35,9 +35,13 @@ jobs:
       - name: Run Infracost
         run: |
           infracost breakdown --path plan.json --format json --out-file infracost.json
+      - name: Run RAG Summary
+        run: python scripts/rag_summary.py
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
       - name: Summarize with LLM
         run: |
-          pip install "openai<1.0.0"
+          pip install google-generativeai
           python scripts/rag_summary.py infracost.json > comment.md
 
       - name: Post PR Comment
