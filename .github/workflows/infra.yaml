@@ -37,7 +37,7 @@ jobs:
           infracost breakdown --path plan.json --format json --out-file infracost.json
       - name: Summarize with LLM
         run: |
-          pip install openai
+          pip install "openai<1.0.0"
           python scripts/rag_summary.py infracost.json > comment.md
 
       - name: Post PR Comment
