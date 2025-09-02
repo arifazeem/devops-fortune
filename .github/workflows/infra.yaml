@@ -2,7 +2,9 @@ name: Infracost PR Comment
 
 on:
   pull_request:
-
+permissions:
+  pull-requests: write # ✅ allow commenting on PRs
+  contents: read
 jobs:
   infracost:
     runs-on: ubuntu-latest
